@@ -1,0 +1,40 @@
+
+> eve-readme-set-repro@0.0.0 reproduce
+> node scripts/reproduce.mjs
+
+Node: v26.7.0; platform: darwin arm64
+eve: 0.84.0
+
+Installed package README:
+- `eve set [--model <model-id>] [--reasoning <effort>]` — change root model settings
+
+$ eve set --model openai/gpt-6-luna-fast
+error: unknown option '--model'
+
+Usage: eve set [options] [command]
+
+Change root agent model settings.
+
+Options:
+  -h, --help               display help for command
+
+Commands:
+  model [options] [model]  Set the agent model and reasoning effort.
+  help [command]           display help for command
+error: unknown option '--model'
+Exit code: 1
+
+$ eve set model --help
+Usage: eve set model [options] [model]
+
+Set the agent model and reasoning effort.
+
+Options:
+  --agent <name>        Select an agent from an agents/ workspace
+  --reasoning <effort>  Set reasoning
+                        (provider-default|none|minimal|low|medium|high|xhigh)
+  -h, --help            display help for command
+Exit code: 0
+
+Reproduced: the packaged README documents an unsupported command.
+No agent server, model request, authentication, or deployment was needed.
